@@ -1,0 +1,136 @@
+@font-face {
+    font-family: Helvetica-New-Display-Black;
+    src: url("../../../../fontes/HelveticaNowDisplay-Black.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: SF-Pro-Text-Regular;
+    src: url("../../../../fontes/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+#container{
+	width: 25%;
+	margin: 0 auto;
+	margin-top: 10%;
+    text-align: center;
+}
+
+#title h1{
+	font-family: "Helvetica-New-Display-Black",sans-serif;
+    font-size: 60px;
+    background: -webkit-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#subtitle p{
+	margin-top: 13%;
+    color: #9a9a9a;
+    font-family: "SF-Pro-Text-Regular",sans-serif;
+    font-size: 15px;
+}
+
+#error p{
+	margin-top: 5%;
+    color: tomato;
+    font-family: "SF-Pro-Text-Regular",sans-serif;
+    font-size: 15px;
+}
+
+#email, #password {
+	width: 100%;
+    height: 50px;
+	margin-top: 3%;
+	font-size: 14px;
+	font-family: 'Noto Sans', sans-serif;
+	padding: 0px 20px 0px 20px;
+	outline: none;
+    border-radius: 6px;
+    border: 1px solid #C9D3DD;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*Align only placeholder to center*/
+::-webkit-input-placeholder {
+	 text-align:center;
+}
+
+#submit {
+	width: 100%;
+    height: 50px;
+	margin-top: 6%;
+	margin-bottom: 10%;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'SF-Pro-Text-Regular', sans-serif;
+    color: #FFF;
+    background-color: #4158D0;
+    cursor: pointer;
+	outline: none;
+	border-radius: 6px;
+	border: none;
+    border-bottom: 4px solid #4158D0;
+}
+
+#sign a{
+	color: #3c3c3c;
+	text-decoration: none;
+    font-family: "SF-Pro-Text-Regular";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Responsive CSS */
+@media only screen and (max-device-width: 600px) {
+	#container{
+		width: 95%;
+		margin-top: 20%;
+	}
+
+	#title h1{
+		font-size: 60px;
+	}
+	
+	#subtitle p{
+		margin-top: 13%;
+        font-size: 15px;
+        color: #3c3c3c;
+        font-family: "SF-Pro-Text-Regular",sans-serif;
+	}
+
+	#error p{
+		margin-top: 5%;
+        font-size: 15px;
+		color: tomato;
+        font-family: "SF-Pro-Text-Regular",sans-serif;
+	}
+
+	#email, #password {
+		width: 100%;
+		height: 60px;
+		margin-top: 8%;
+		font-size: 18px;
+		padding: 0px 50px 0px 50px;
+		border-radius: 8px;
+        border: 2px solid #C9D3DD;    
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+	}
+
+	#submit {
+		width: 100%;
+		height: 60px;
+		margin-top: 6%;
+		margin-bottom: 10%;
+		font-size: 18px;
+		border-radius: 8px;
+		border-bottom: 4px solid #4158D0;
+	}
+
+	#sign a{
+		font-size: 15px;
+    }
+
+  }

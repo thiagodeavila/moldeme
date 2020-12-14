@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="home.component.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="title">
+            <h1>
+                molde.me
+            </h1>
+        </div>
+        <div id="user">
+            <img src="assets/img/user.svg">
+            <span id="userName">{{ authToken.user.name.split(' ')[0] }}</span>
+        </div>
+    </div>
+    <div id="container">
+        <div id="block">
+            <div class="subBlock">
+                <div id="userBlock" class="box litleBox">
+                    <h3>Usuário:</h3>
+                    <h1>{{authToken.user.name}}</h1>
+                </div>
+                <div id="bestFabric" class="box litleBox">
+                    <h3>Melhor tecido:</h3>
+                    <h1>{{ bestShirt().name}}</h1>
+                    <h3>Preço do rolo:</h3>
+                    <h1>R$ {{ bestShirt().fabricPrice}}</h1>
+                    <h3>Preço com frete:</h3>
+                    <h1>R$ {{ bestShirt().totalPrice}}</h1>
+                </div>
+            </div>
+            <div id="fabricAdd" class="box">
+                <h1>Adicionar Tecido</h1>
+                <form #fabric="ngForm" (ngSubmit)="onSave(fabric)" id="fabricForm">
+                    <h3 for="male">Nome:</h3>
+                    <input type="text" id="name" name="name" placeholder="Nome do tecido" ngModel>
+                    <div id="widthLengthAtr">
+                        <div class="widthLengthAtr">
+                            <h3 for="male">Largura:</h3>
+                            <input type="number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="width" name="width" placeholder="Largura do tecido" ngModel>
+                        </div>
+                        <div class="widthLengthAtr">
+                            <h3 for="male">Comprimento:</h3>
+                            <input type="number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="length" name="length" placeholder="Comprimento do tecido" ngModel>
+                        </div>
+                    </div>
+                    <h3 for="male">Gramatura:</h3>
+                    <input type="number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="grammage" name="grammage" placeholder="Gramatura do tecido" ngModel>
+                    <h3 for="male">Preço:</h3>
+                    <div id="priceBlock">
+                        <h1>R$ </h1>
+                        <input type="number" id="price" name="price" placeholder="Preço do tecido" ngModel>
+                    </div>
+                    <div id="divButton">
+                        <button type="submit" id="add">Adicionar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="fabric" class="box">
+            <div id="headTable">
+                <h1>Lista de Tecidos</h1>
+            </div>
+            <table cellspacing="0">
+                <tr>
+                    <th>Nome</th>
+                    <th>Largura</th>
+                    <th>Comprimento</th>
+                    <th>Gramatura</th>
+                    <th>Preço</th>
+                    <th>Camisas</th>
+                </tr>
+                <tr *ngFor="let item of fabricList.data">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.width}}</td>
+                    <td>{{ item.length}}</td>
+                    <td>{{ item.grammage}}</td>
+                    <td>{{ item.price}}</td>
+                    <td>{{ calculateShirt(item) }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
